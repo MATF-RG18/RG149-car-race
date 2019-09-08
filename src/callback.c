@@ -45,6 +45,7 @@ void on_display(void) {
       score += 1; 
     }
     drawWall();
+    //drawTunel();
 
     drawRoad();
       if(is_crashed()) {

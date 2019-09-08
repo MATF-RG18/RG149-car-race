@@ -7,7 +7,7 @@ void drawPlayerModel(float x, float z) {
   
   glPushMatrix();
 	glTranslatef(x, -0.5, z);
-  glRotatef(playerPosZ*100, -1, 0, 0);
+  glRotatef(playerPosZ*100, 1, 0, 0);
 	glutWireSphere(playerLength, 10, 10);
 
   glPopMatrix();
@@ -201,6 +201,8 @@ void drawRoad(void) {
     //iscrtavamo isprekidane linije po putu, izmedju traka
     for(j = 10; (float)j> -490; j--){
 
+      
+
       //zelim da mi se crtice na putu iscrtavaju na svaka dva
       if(j%2 == 0) {
         setMaterial("lines");
@@ -223,6 +225,29 @@ void drawRoad(void) {
   }
 }
 
+
+void drawTunel() {
+  for(int j = 10; (float)j> -490; j--){
+  //hocu da iscrtam prsten oko puta, kao mini tunel.
+      if(j%10 == 0) {
+        setMaterial("tunel");
+        glPushMatrix();
+
+        //TREBA POGLEDATI KAKO DA ISECEM OVAJ TUNEL DA BUDE KAKO TREBA!
+        double clip_plane[] = {0.9, 0.2, 0.1, 1.0};
+        //double clip_plane1[] = {1, 0, 0, lengthOfRoad - 3};
+        glClipPlane(GL_CLIP_PLANE0, clip_plane);
+        glEnable(GL_CLIP_PLANE0);
+       /* glClipPlane(GL_CLIP_PLANE1, clip_plane1);
+        glEnable(GL_CLIP_PLANE1);*/
+        glTranslatef((lengthOfRoad - 0.3),-0.75, j+wallLaps);
+        glutSolidSphere(lengthOfRoad-0.35, 10, 10);
+        //glDisable(GL_CLIP_PLANE1);
+        glDisable(GL_CLIP_PLANE0);
+        glPopMatrix();
+      }
+    }
+}
 
     
 

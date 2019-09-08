@@ -196,6 +196,19 @@ void setMaterial(char * option) {
 		glMaterialfv(GL_FRONT, GL_DIFFUSE, diffuse);
 		glMaterialfv(GL_FRONT, GL_SPECULAR, specular);
 		glMaterialf(GL_FRONT, GL_SHININESS, shininess);
-	}	
+	}
+	else if(strcmp("tunel", option)==0) {
+		//Podesavamo vektore
+		GLfloat specular [] = {0,0,0,0};
+		GLfloat ambient  [] = {0.1, 0.870, 0.1,0.7};
+		GLfloat diffuse  [] = {0.1, 0.870, 0.1,0.9};
+    	int shininess   = 100;
+
+		//Inicijalizujemo osobine materijala
+		glMaterialfv(GL_FRONT, GL_AMBIENT, ambient);
+		glMaterialfv(GL_FRONT, GL_DIFFUSE, diffuse);
+		glMaterialfv(GL_FRONT, GL_SPECULAR, specular);
+		glMaterialf(GL_FRONT, GL_SHININESS, shininess);
+	}		
 }
 
