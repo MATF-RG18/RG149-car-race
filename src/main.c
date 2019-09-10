@@ -23,7 +23,7 @@ int main(int argc, char **argv)
 
     set_callback();
 
-    glClearColor(0, 0, 0, 0);
+    glClearColor(0.098, 0.372, 0.403, 0);
     
     //Enable blok
     glEnable(GL_LINE_SMOOTH);

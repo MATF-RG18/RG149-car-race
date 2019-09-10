@@ -209,6 +209,32 @@ void setMaterial(char * option) {
 		glMaterialfv(GL_FRONT, GL_DIFFUSE, diffuse);
 		glMaterialfv(GL_FRONT, GL_SPECULAR, specular);
 		glMaterialf(GL_FRONT, GL_SHININESS, shininess);
-	}		
+	}
+	else if(strcmp("theets", option)==0) {
+		//Podesavamo vektore
+		GLfloat specular [] = {0,0,0,0};
+		GLfloat ambient  [] = {0.603, 0.596, 0.596,0.7};
+		GLfloat diffuse  [] = {0.603, 0.596, 0.596,0.9};
+    	int shininess   = 100;
+
+		//Inicijalizujemo osobine materijala
+		glMaterialfv(GL_FRONT, GL_AMBIENT, ambient);
+		glMaterialfv(GL_FRONT, GL_DIFFUSE, diffuse);
+		glMaterialfv(GL_FRONT, GL_SPECULAR, specular);
+		glMaterialf(GL_FRONT, GL_SHININESS, shininess);
+	}
+	else if(strcmp("score", option)==0) {
+		//Podesavamo vektore
+		GLfloat specular [] = {0,0,0,0};
+		GLfloat ambient  [] = {1, 1, 1,0.7};
+		GLfloat diffuse  [] = {1, 1, 1,0.9};
+    	int shininess   = 100;
+
+		//Inicijalizujemo osobine materijala
+		glMaterialfv(GL_FRONT, GL_AMBIENT, ambient);
+		glMaterialfv(GL_FRONT, GL_DIFFUSE, diffuse);
+		glMaterialfv(GL_FRONT, GL_SPECULAR, specular);
+		glMaterialf(GL_FRONT, GL_SHININESS, shininess);
+	}				
 }
 

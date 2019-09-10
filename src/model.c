@@ -18,21 +18,11 @@ void drawCoin(float x, float z) {
 
   setMaterial("coins");
   glPushMatrix();
-  //double clip_plane[] = {-1, 0, 0, x+0.05};
-  //double clip_plane1[] = {1, 0, 0, x-2};
 
-  /*glClipPlane(GL_CLIP_PLANE0, clip_plane);
-  glEnable(GL_CLIP_PLANE0);
-*/
- /* glClipPlane(GL_CLIP_PLANE1, clip_plane1);
-  glEnable(GL_CLIP_PLANE1);
-*/
-  
   glTranslatef(x, -0.5, z);
   glRotatef(playerPosZ*100, 0, 1, 0);
-  glutSolidSphere(playerLength, 10, 10);
- // glDisable(GL_CLIP_PLANE1);
-  //glDisable(GL_CLIP_PLANE0);
+  glutSolidSphere(playerLength, 12, 2);
+
   glPopMatrix();
 
 }
@@ -233,20 +223,41 @@ void drawTunel() {
         setMaterial("tunel");
         glPushMatrix();
 
-        //TREBA POGLEDATI KAKO DA ISECEM OVAJ TUNEL DA BUDE KAKO TREBA!
+       /* //TREBA POGLEDATI KAKO DA ISECEM OVAJ TUNEL DA BUDE KAKO TREBA!
         double clip_plane[] = {0.9, 0.2, 0.1, 1.0};
         //double clip_plane1[] = {1, 0, 0, lengthOfRoad - 3};
         glClipPlane(GL_CLIP_PLANE0, clip_plane);
-        glEnable(GL_CLIP_PLANE0);
+        glEnable(GL_CLIP_PLANE0);*/
        /* glClipPlane(GL_CLIP_PLANE1, clip_plane1);
         glEnable(GL_CLIP_PLANE1);*/
         glTranslatef((lengthOfRoad - 0.3),-0.75, j+wallLaps);
-        glutSolidSphere(lengthOfRoad-0.35, 10, 10);
+        glutSolidTorus(lengthOfRoad+5, 14, 30, 30);
         //glDisable(GL_CLIP_PLANE1);
-        glDisable(GL_CLIP_PLANE0);
+       // glDisable(GL_CLIP_PLANE0);
         glPopMatrix();
       }
     }
+
+
+}
+
+void drawTheets() {
+setMaterial("theets");  
+glBegin(GL_TRIANGLES);
+glColor3f(1, 1, 1);
+glVertex3f( 2, 0.9, playerPosZ-2);
+glVertex3f( 4, 0.9, playerPosZ-2);
+glVertex3f(3, -0.2, playerPosZ-2);
+glEnd();
+
+
+glBegin(GL_TRIANGLES);
+glColor3f(1, 1, 1);
+glVertex3f(-1.5, 0.9, playerPosZ-2);
+glVertex3f(0.5, 0.9, playerPosZ-2);
+glVertex3f(-0.5, -0.2, playerPosZ-2);
+glEnd();
+
 }
 
     
@@ -259,8 +270,8 @@ void writeScore() {
     }  
     sprintf (s, "SCORE: %i!", score);
 
-    glColor3f( 1.0f, 0.0f, 0.0f );
-    glRasterPos3f( 1, 0.5, playerPosZ-2);
+    setMaterial("score");  
+    glRasterPos3f( 0.97, 0.3, playerPosZ-2);
     char * ch;
     for( ch = s; *ch; ch++ ) {
         glutBitmapCharacter( GLUT_BITMAP_TIMES_ROMAN_24, (int)*ch );

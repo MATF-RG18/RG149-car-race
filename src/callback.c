@@ -23,7 +23,7 @@ void on_display(void) {
     glMatrixMode(GL_PROJECTION);
     glLoadIdentity();
   //  gluPerspective(60, window_width/(float)window_height,1,-1.5); 
-     gluPerspective(60, window_width/(float)window_height, 1, 10);
+     gluPerspective(60, window_width/(float)window_height, 0.7, 10);
 
     // Podesava se vidna tacka
     glMatrixMode(GL_MODELVIEW);
@@ -45,8 +45,8 @@ void on_display(void) {
       score += 1; 
     }
     drawWall();
-    //drawTunel();
-
+    drawTunel();
+    drawTheets();
     drawRoad();
       if(is_crashed()) {
       animation_ongoing = false;
@@ -87,7 +87,7 @@ void on_timer(int value) {
 
 
     if((int)playerPosZ % 50 == 0){
-      move = move + 0.005;
+      move = move + 0.003;
     }
 
     //if((int)playerPosZ % 20 == 0)

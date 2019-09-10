@@ -22,6 +22,7 @@ void drawCoins();
 void setWall();
 void setCoins();
 void drawTunel();
+void drawTheets();
 //Ispisuje skor
 void writeScore();
 
