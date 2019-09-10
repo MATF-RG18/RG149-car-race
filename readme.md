@@ -1,8 +1,8 @@
+Nalazite se u unutrasnjosti zmije, cilj Vam je da pokupite sto vise njenih minerala i da je oslabite.
 
-
-
-Cilj igre je da se sakupi sto vise novcica, nakon odredjenog vremena brzina kretanja
-lopte ce da se postepeno povecava. Ukoliko lopta udari u rozu prepreku, igra se zaustavlja.
+Cilj igre je da se sakupi sto vise minerala. nakon odredjenog vremena brzina kretanja
+lopte ce se postepeno povecavati.
+Ukoliko lopta udari u rozu prepreku, igra se zaustavlja.
 
 Tasteri koje mozemo da koristimo su:
 
@@ -22,5 +22,5 @@ Odradio sam:
 - [x] namestio animaciju
 - [x] generisao prepreke
 - [x] lopta se rotira oko sebe, kako bi izgledalo realnije da se kotrlja
-- [x] generisu se novcici
+- [x] generisu se minerali
 - [x] ispisuje se Score
